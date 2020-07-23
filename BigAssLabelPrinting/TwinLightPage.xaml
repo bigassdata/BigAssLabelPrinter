@@ -1,0 +1,25 @@
+﻿<Page x:Class="BigAssLabelPrinting.TwinLightPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="804" d:DesignWidth="1572"
+	Title="TwinLightPage">
+
+    <Grid>
+        <Label x:Name="label12" Content="KIT PART" HorizontalAlignment="Left" Margin="15,29,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox x:Name="kitpartTextBox" HorizontalAlignment="Left" Height="22" Margin="10,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350"/>
+        <Button x:Name="searchButton" Content="SEARCH" HorizontalAlignment="Left" Margin="235,343,0,0" VerticalAlignment="Top" Width="125" Background="#FF1B1B1C" Foreground="#FFFBFBFB" Height="40" Click="searchButton_Click"/>
+        <StackPanel x:Name="remGrid" HorizontalAlignment="Left" Height="697" Margin="1481,97,0,0" VerticalAlignment="Top" Width="42"/>
+        <StackPanel x:Name="testGrid" HorizontalAlignment="Left" Height="697" Margin="400,97,0,0" VerticalAlignment="Top" Width="1081"/>
+        <Label x:Name="kitpartTextBox_Copy" Content="FIXTURE PART" HorizontalAlignment="Left" Margin="15,87,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox x:Name="fixturepartTextBox" HorizontalAlignment="Left" Height="22" Margin="10,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350"/>
+        <Label x:Name="kitpartTextBox_Copy1" Content="INTERCONNECTION PART" HorizontalAlignment="Left" Margin="15,143,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox x:Name="interconnectionpartTextBox" HorizontalAlignment="Left" Height="22" Margin="10,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350"/>
+        <Label x:Name="kitpartTextBox_Copy2" Content="JOB NUMBER" HorizontalAlignment="Left" Margin="15,202,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox x:Name="jobnumberTextBox" HorizontalAlignment="Left" Height="22" Margin="10,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350"/>
+        <Label x:Name="kitpartTextBox_Copy3" Content="QUANTITY" HorizontalAlignment="Left" Margin="15,260,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox x:Name="quantityTextBox" HorizontalAlignment="Left" Height="22" Margin="10,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350"/>
+    </Grid>
+</Page>

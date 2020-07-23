@@ -1,0 +1,68 @@
+﻿<Window x:Class="BigAssLabelPrinting.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Big Ass Label Printer" Height="900" Width="1600" Background="#FF1B1B1C" WindowStyle="ThreeDBorderWindow" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style x:Key="ComboBoxstyle1" TargetType="{x:Type ComboBox}">
+            <Setter Property="Height" Value="23"/>
+            <Setter Property="Background" Value="#FF656565"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="AlternationCount" Value="2"/>
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="TextBlock.Background" Value="Black" />
+        </Style>
+
+        <Storyboard x:Key="blinkAnimation" Duration="0:0:5" >
+
+
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                      Storyboard.TargetName="maininfobox"
+                                      AutoReverse="True">
+                <ColorAnimationUsingKeyFrames.KeyFrames>
+                    <DiscreteColorKeyFrame KeyTime="0:0:0" Value="#FFFFC60A"/>
+                    <DiscreteColorKeyFrame KeyTime="0:0:1" Value="#FFFBFBFB"/>
+
+                </ColorAnimationUsingKeyFrames.KeyFrames>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+        <Grid Height="870" Width="1592">
+            <Frame x:Name="primaryframe" Content="" HorizontalAlignment="Left" Height="652" Margin="20,55,0,0" VerticalAlignment="Top" Width="1572" BorderThickness="1" NavigationUIVisibility="Hidden"/>
+            <Grid x:Name="uppergrid" HorizontalAlignment="Left" Height="40" Margin="0,10,0,0" VerticalAlignment="Top" Width="1477">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="31*"/>
+                    <ColumnDefinition Width="760*"/>
+                    <ColumnDefinition ScrollViewer.IsDeferredScrollingEnabled="True"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="finishedGoodsButton" Content="FINISHED GOODS" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Background="#FF1B1B1C" Foreground="#FFFBFBFB" Height="40" Click="UpperButton_Click" Margin="3,0,0,0" Grid.ColumnSpan="2"/>
+                <Button x:Name="specLabelButton" Content="SPEC" HorizontalAlignment="Left" Margin="57,0,0,0" VerticalAlignment="Top" Width="59" Background="#FF1B1B1C" Foreground="#FFFBFBFB" Height="40" Click="UpperButton_Click" Grid.Column="1"/>
+                <Button x:Name="twinLightButton" Content="TWIN LIGHT" HorizontalAlignment="Left" Margin="121,0,0,0" VerticalAlignment="Top" Width="86" Background="#FF1B1B1C" Foreground="#FFFBFBFB" Height="40" Click="UpperButton_Click" Grid.Column="1"/>
+                <Button x:Name="customButton" Content="CUSTOM" HorizontalAlignment="Left" Margin="356,0,0,0" VerticalAlignment="Top" Width="71" Background="#FF1B1B1C" Foreground="#FFFBFBFB" Height="40" RenderTransformOrigin="3.4,0.475" Click="UpperButton_Click" Grid.Column="1"/>
+                <Button x:Name="printingHistoryButton" Content="PRINTING HISTORY" HorizontalAlignment="Left" Margin="432,0,0,0" VerticalAlignment="Top" Width="113" Background="#FF1B1B1C" Foreground="#FFFBFBFB" Height="40" Click="UpperButton_Click" Grid.Column="1"/>
+                <Button x:Name="userManagementButton" Content="USER MANAGEMENT" HorizontalAlignment="Left" Margin="550,0,0,0" VerticalAlignment="Top" Width="125" Background="#FF1C1B1B" Foreground="#FFFBFBFB" Height="40" Click="UpperButton_Click" Grid.Column="1"/>
+                <Button x:Name="travelerButton" Content="TRAVELER" HorizontalAlignment="Left" Margin="277,0,0,0" VerticalAlignment="Top" Width="74" Background="#FF1B1B1C" Foreground="#FFFBFBFB" Height="40" Click="UpperButton_Click" Grid.Column="1"/>
+                <Button x:Name="doeButton" Content="DOE" HorizontalAlignment="Left" Margin="212,0,0,0" VerticalAlignment="Top" Width="65" Background="#FF1B1B1C" Foreground="#FFFBFBFB" Height="40" Click="UpperButton_Click" Grid.Column="1"/>
+                <Slider x:Name="invSwitch" HorizontalAlignment="Left" Margin="805,10,0,0" VerticalAlignment="Top" Width="48" SmallChange="1" Maximum="1" Foreground="#FFC7C7B9" ValueChanged="invSwitch_ValueChanged" Grid.Column="1"/>
+                <Label x:Name="invLabel" Content="INVENTORY/SHIPPED" HorizontalAlignment="Left" Margin="680,7,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1"/>
+                <Label x:Name="wipLabel" Content="WIP" HorizontalAlignment="Left" Margin="858,7,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1"/>
+                <ComboBox x:Name="printerComboBox" HorizontalAlignment="Left" Margin="1209,8,0,0" VerticalAlignment="Top" Width="210" Background="DarkGray" Foreground="#FF020202" Style="{DynamicResource ComboBoxstyle1}" Grid.Column="1" SelectionChanged="printerComboBox_SelectionChanged"/>
+                <ComboBox x:Name="countryComboBox" HorizontalAlignment="Left" Margin="1090,8,0,0" VerticalAlignment="Top" Width="58" Background="DarkGray" Foreground="#FF020202" Style="{DynamicResource ComboBoxstyle1}" Grid.Column="1" SelectionChanged="countryComboBox_SelectionChanged"/>
+                <Label x:Name="printerLabel" Content="PRINTER" HorizontalAlignment="Left" Margin="1153,7,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1" Width="56"/>
+                <Slider x:Name="erpSwitch" HorizontalAlignment="Left" Margin="923,9,0,0" VerticalAlignment="Top" Width="48" SmallChange="1" Maximum="1" Foreground="#FFC7C7B9" ValueChanged="erpSwitch_ValueChanged" Grid.Column="1"/>
+                <Label x:Name="e10Label" Content="E10" HorizontalAlignment="Left" Margin="894,7,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1"/>
+                <Label x:Name="vantageLabel" Content="VANTAGE" HorizontalAlignment="Left" Margin="971,7,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1"/>
+                <!--Slider x:Name="USMYSwitch" HorizontalAlignment="Left" Margin="1068,11,0,7" Width="48" SmallChange="1" Maximum="1" Foreground="#FFC7C7B9" ValueChanged="USMYSwitch_ValueChanged" Grid.Column="1"/-->
+                <Label x:Name="Country" Content="Country" HorizontalAlignment="Left" Margin="1038,7,0,7" Foreground="White" Grid.Column="1"/>
+            </Grid>
+            <TextBlock x:Name="maininfobox" HorizontalAlignment="Left" Margin="61,712,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="147" Width="1521" Foreground="White" FontSize="18">
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="Binding.TargetUpdated">
+                        <BeginStoryboard Storyboard="{StaticResource blinkAnimation}"/>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+
+        </Grid>
+    </ScrollViewer>
+</Window>

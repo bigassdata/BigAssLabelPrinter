@@ -1,0 +1,18 @@
+﻿<Page x:Class="BigAssLabelPrinting.CustomLabelPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="804" d:DesignWidth="1572"
+	Title="CustomLabelPage">
+
+    <Grid>
+        <TextBox x:Name="customCodeTextBox" HorizontalAlignment="Left" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Height="240" Margin="10,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="1538" Background="#FF1B1B1C" Foreground="White"/>
+        <Button x:Name="sendToDatabaseButton" Content="SEND TO BARTENDER" HorizontalAlignment="Left" Margin="1424,317,0,0" VerticalAlignment="Top" Width="124" Background="#FF1B1B1C" Foreground="#FFFBFBFB" Height="40" Click="sendToDatabaseButton_Click"/>
+        <Label Content="This tool allows you to send direct print commands to the Bartender server." HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="FOR ADVANCED USERS" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBlock x:Name="infoTextbox" HorizontalAlignment="Left" Margin="10,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="232" Width="1538" Foreground="White"/>
+
+    </Grid>
+</Page>
