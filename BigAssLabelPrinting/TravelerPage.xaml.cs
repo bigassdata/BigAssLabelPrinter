@@ -53,7 +53,7 @@ namespace BigAssLabelPrinting
                 }
                 else
                 {
-                    da.SelectCommand = new SqlCommand(@"DECLARE @serialnum varchar(max) set @serialnum = '" + serialnum + "' SELECT i.Key1 + '|' + p.PartNum + '|' + p.basPickCode_c + '|' + i.Key2 + '|' + p.PartDescription + '|' + u.ChildKey2 +'|' AS 'data' from [Ice].UD110 i INNER JOIN [ice].UD110A u ON(i.Key1 = u.Key1) INNER JOIN Part p ON (p.Company = u.Company AND p.PartNum = i.ShortChar02) where i.Key1 = @serialnum AND u.ChildKey3=0", connection);
+                    da.SelectCommand = new SqlCommand(@"DECLARE @serialnum varchar(max) set @serialnum = '" + serialnum + "' SELECT TOP 1 i.Key1 + '|' + p.PartNum + '|' + p.basPickCode_c + '|' + i.Key2 + '|' + p.PartDescription + '|' + i.Key2 +'|' AS 'data' from [Ice].UD110 i INNER JOIN Part p ON(p.Company = i.Company AND p.PartNum = i.ShortChar02) where i.Key1 = @serialnum", connection);
                 }
 
                 if (SMTButton.Foreground == MainWindow.activeBackground)

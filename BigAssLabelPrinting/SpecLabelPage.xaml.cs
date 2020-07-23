@@ -84,7 +84,7 @@ namespace BigAssLabelPrinting
                 join PartClass c on c.Company = p.Company and c.ClassID = p.ClassID 
                 where s.Company = '{0}' and s.SerialNumber = '{1}'";
             string selectWIP = @"
-                select s.Key1 as SerialNumber, p.PartNum, p.basModelNum_c, rtrim(ltrim(p.basSpecData_c)) as basSpecData_c, 
+                select top 1 s.Key1 as SerialNumber, p.PartNum, p.basModelNum_c, rtrim(ltrim(p.basSpecData_c)) as basSpecData_c, 
                     case when len(rtrim(ltrim(p.basSpecLabelOverride_c))) = 0 then rtrim(ltrim(c.basSpecLabel_c)) else rtrim(ltrim(p.basSpecLabelOverride_c)) end as basSpecLabel_c
                 from Ice.UD110 s
                 join Part p on p.Company = s.Company and p.PartNum = s.ShortChar02
