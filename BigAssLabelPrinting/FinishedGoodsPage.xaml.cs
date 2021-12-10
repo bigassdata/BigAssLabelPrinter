@@ -175,7 +175,16 @@ namespace BigAssLabelPrinting
                     if (serialPartLotNum.Length == 0)
                         serialPartLotNum = partNumberTextBox.Text;
 
-                    searchType = SearchType.Part;
+                    if (searchType == SearchType.Part)
+                    {
+                        
+                    }
+
+                    if (serialNumberTextBox.Text.Contains("'"))
+                    {
+                        serialNumberTextBox.Text = serialNumberTextBox.Text.Replace('\'', ' ');
+                    }
+                    
 
                     select = string.Format(selectPart, serialNumberTextBox.Text.Trim().Length > 0 ? serialNumberTextBox.Text : "Test-Serial-1234", MainWindow.CountryComboBox.Text, serialPartLotNum);
 
@@ -249,10 +258,18 @@ namespace BigAssLabelPrinting
                         else
                             label = DEFAULT_LABEL_MY;
 
+                        if (String.IsNullOrEmpty(jobNum))
+                        {
+                            if (!String.IsNullOrEmpty(this.serialNumberTextBox.Text))
+                            {
+                                jobNum = this.serialNumberTextBox.Text;
+                            }
+                        }
+
                         string printData = "";
                         string serialPartData = $"{partNum}|{partDesc}|{serialNum}|S||{pickCode}|{upcCode}|1|1|REPRINT|Product of {country}||{LegalLabel}|{TranslatedDesc}|";
                         string lotTrackedData = $"{partNum}|{partDesc}|{jobNum}|L||{pickCode}|{upcCode}|";
-                        string lotNotTrackedData = $"{partNum}|{partDesc}||J|{jobNum}|{pickCode}|{upcCode}|";
+                        string lotNotTrackedData = $"{partNum}|{partDesc}|{jobNum}|J|{jobNum}|{pickCode}|{upcCode}|";
                         string vantageSerialData = $"{partNum}|{partDesc}|{serialNum}|S||{country}||1|1|REPRINT|";
                         string vantageLotTrackedData = $"{partNum}|{partDesc}|{jobNum}|L||{country}||";
                         string vantageLotNotTrackedData = $"{partNum}|{partDesc}||J|{jobNum}|{country}||";
@@ -315,7 +332,7 @@ namespace BigAssLabelPrinting
                         {
                             buttonText = partNum;
 
-                            printData = serialPartData;
+                            printData = lotNotTrackedData;
                         }
 
                         addButton(buttonText, string.Format(MainWindow.GetBartenderPrintString(), label, MainWindow.PrinterComboBox.Text) + printData, 

@@ -247,12 +247,12 @@ namespace BigAssLabelPrinting
                         a.Fill(dt);
                     try
                     {
-                        using (SqlDataAdapter a = new SqlDataAdapter("SELECT CodeDesc FROM UDCodes WHERE CodeTypeID like 'LBL%' Group By CodeDesc", MainWindow.MYE10connectionString))
-                            a.Fill(dt);
+                        //using (SqlDataAdapter a = new SqlDataAdapter("SELECT CodeDesc FROM UDCodes WHERE CodeTypeID like 'LBL%' Group By CodeDesc", MainWindow.MYE10connectionString))
+                            //a.Fill(dt);
                     }
                     catch (Exception e)
                     {
-                        MainInfoTextBlock.Text = "Error Connecting to MY server.";
+                        //MainInfoTextBlock.Text = "Error Connecting to MY server.";
                     }
                     DataView dv = new DataView(dt);
                     dv.Sort = "CodeDesc";
@@ -275,7 +275,7 @@ namespace BigAssLabelPrinting
             {
                 using (DataTable dt = new DataTable())
                 {
-                    using (SqlDataAdapter a = new SqlDataAdapter("select Company from Erp.Company order by Company", MainWindow.E10connectionString))
+                    using (SqlDataAdapter a = new SqlDataAdapter("select Company from Erp.Company where Company <> 'MY' order by Company", MainWindow.E10connectionString))
                         a.Fill(dt);
 
                     CountryComboBox.ItemsSource = dt.AsEnumerable().Select(r => r.Field<string>("Company"));
