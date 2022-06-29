@@ -294,7 +294,7 @@ namespace BigAssLabelPrinting
                 switchit = SMTTravelerlabel;
             }
 
-                printcode = "%BTW% /AF=\"\\\\E101-SQL\\Websites\\EpicorERP10\\Server\\reports\\" + switchit + "\" /D=%Trigger File Name% /PRN=\"" + printer + "\" /R=3 /P /DD \r\n%END% \r\n";
+                printcode = "%BTW% /AF=\"\\\\erp-us-bartend\\Bartender\\Reports\\" + switchit + "\" /D=%Trigger File Name% /PRN=\"" + printer + "\" /R=3 /P /DD \r\n%END% \r\n";
             printcode += code + "1|1|REPRINT|\r\n";
             //printcode += "60SM-15236-023-00|K3150-S0-PB-04-02-C|B64|FH-00208512|Haiku 60, Short Mount Ceiling Fan (<125W), Black, (US/CAN/MX), with SenseMe (WIFI, LED), (U), 0.019HP, 100-125/200-240 VAC, Single Phase|20F85EAE4C54|" + "1|1|REPRINT|\r\n";
             return printcode;

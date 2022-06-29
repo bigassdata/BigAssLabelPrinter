@@ -38,7 +38,7 @@ namespace BigAssLabelPrinting
         public static TextBlock MainInfoTextBlock;
 
         public static string fansconnectionString = "server=mfg-db\\Vantage;database=bigassfans;uid=WebService;password=MKhZx0_N";
-        public static string E10connectionString = "server=e101-SQL;database=Epicor10;uid=WebService;password=MKhZx0_N";
+        public static string E10connectionString = "server=erp-SQL;database=Kinetic;uid=WebService;password=MKhZx0_N";
         public static string VantageconnectionString = "server=mfg-db\\Vantage;database=MfgSys803;uid=WebService;password=MKhZx0_N";
         public static string MYE10connectionString = "server=e10-my-SQL;database=EpicorERP10;uid=WebService;password=MKhZx0_N";
         public static string MYfansconnectionString = "server=mfg-db\\Vantage;database=bigassfans;uid=WebService;password=MKhZx0_N";
@@ -208,7 +208,7 @@ namespace BigAssLabelPrinting
         public static void SendToBartender(string data, string serialnum = "", string printer = "", string labeltype = "CUSTOM LABEL", string lotnum = "")
         {
             //string savepath = @"\\e10-us-app-1\EpicorData\Bartender";
-            string savepath = @"\\e101-agent-1.bigassfan.local\EpicorData\Bartender"; //Live Folder
+            string savepath = @"\\erp-us-bartend\Bartender\Prints"; //Live Folder
             //string savepath = @"\\e101-agent-1.bigassfan.local\EpicorData\"; // Test Folder
 
             string country = MainWindow.CountryComboBox.Text;
@@ -294,8 +294,8 @@ namespace BigAssLabelPrinting
 
         public static string GetBartenderPrintString()
         {
-            string printStringElse = "%BTW% /AF=\"\\\\E101-SQL\\Websites\\EpicorERP10\\Server\\reports\\{0}\" /D=%Trigger File Name% /PRN=\"{1}\" /R=3 /P /DD \r\n%END% \r\n";
-            string printStringMY = "%BTW% /AF=\"\\\\e10-my-app-1\\Epicor10\\Server\\reports\\{0}\" /D=%Trigger File Name% /PRN=\"{1}\" /R=3 /P /DD \r\n%END% \r\n";
+            string printStringElse = "%BTW% /AF=\"\\\\erp-us-bartend\\Bartender\\reports\\{0}\" /D=%Trigger File Name% /PRN=\"{1}\" /R=3 /P /DD \r\n%END% \r\n";
+            string printStringMY = "%BTW% /AF=\"\\\\ERP-US-Bartend\\reports\\{0}\" /D=%Trigger File Name% /PRN=\"{1}\" /R=3 /P /DD \r\n%END% \r\n";
 
             return CountryComboBox.Text == "MY" ? printStringMY : printStringElse;
         }

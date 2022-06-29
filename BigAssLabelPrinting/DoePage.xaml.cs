@@ -371,7 +371,7 @@ namespace BigAssLabelPrinting
             string printcode;
             //\\E101-SQL\\Websites\\EpicorERP10\\Server\\reports
             //printcode = "%BTW% /AF=\"\\\\e10-us-app-1\\epicor10\\server\\reports\\TC On-Demand Labels\\" + DOElabel + "\" /D=%Trigger File Name% /PRN=\"" + printer + "\" /R=3 /P /DD \r\n%END% \r\n";
-            printcode = "%BTW% /AF=\"\\\\E101-SQL\\Websites\\EpicorERP10\\Server\\reports\\TC On-Demand Labels\\" + DOElabel + "\" /D=%Trigger File Name% /PRN=\"" + printer + "\" /R=3 /P /DD \r\n%END% \r\n";
+            printcode = "%BTW% /AF=\"\\\\erp-us-bartend\\Bartender\\Reports\\TC On-Demand Labels\\" + DOElabel + "\" /D=%Trigger File Name% /PRN=\"" + printer + "\" /R=3 /P /DD \r\n%END% \r\n";
             
             if (allLabelSwitch.Value == 1 && serialLotSwitch.Value == 1)
             {

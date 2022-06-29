@@ -49,9 +49,9 @@
                 <ComboBox x:Name="printerComboBox" HorizontalAlignment="Left" Margin="1209,8,0,0" VerticalAlignment="Top" Width="210" Background="DarkGray" Foreground="#FF020202" Style="{DynamicResource ComboBoxstyle1}" Grid.Column="1" SelectionChanged="printerComboBox_SelectionChanged"/>
                 <ComboBox x:Name="countryComboBox" HorizontalAlignment="Left" Margin="1090,8,0,0" VerticalAlignment="Top" Width="58" Background="DarkGray" Foreground="#FF020202" Style="{DynamicResource ComboBoxstyle1}" Grid.Column="1" SelectionChanged="countryComboBox_SelectionChanged"/>
                 <Label x:Name="printerLabel" Content="PRINTER" HorizontalAlignment="Left" Margin="1153,7,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1" Width="56"/>
-                <Slider x:Name="erpSwitch" HorizontalAlignment="Left" Margin="923,9,0,0" VerticalAlignment="Top" Width="48" SmallChange="1" Maximum="1" Foreground="#FFC7C7B9" ValueChanged="erpSwitch_ValueChanged" Grid.Column="1"/>
-                <Label x:Name="e10Label" Content="E10" HorizontalAlignment="Left" Margin="894,7,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1"/>
-                <Label x:Name="vantageLabel" Content="VANTAGE" HorizontalAlignment="Left" Margin="971,7,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1"/>
+                <Slider x:Name="erpSwitch" HorizontalAlignment="Left" Margin="945,10,0,0" VerticalAlignment="Top" Width="48" SmallChange="1" Maximum="1" Foreground="#FFC7C7B9" ValueChanged="erpSwitch_ValueChanged" Grid.Column="1"/>
+                <Label x:Name="e10Label" Content="Kinetic" HorizontalAlignment="Left" Margin="900,7,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1"/>
+                <Label x:Name="vantageLabel" Content="E10" HorizontalAlignment="Left" Margin="993,7,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1"/>
                 <!--Slider x:Name="USMYSwitch" HorizontalAlignment="Left" Margin="1068,11,0,7" Width="48" SmallChange="1" Maximum="1" Foreground="#FFC7C7B9" ValueChanged="USMYSwitch_ValueChanged" Grid.Column="1"/-->
                 <Label x:Name="Country" Content="Country" HorizontalAlignment="Left" Margin="1038,7,0,7" Foreground="White" Grid.Column="1"/>
             </Grid>
